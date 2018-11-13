@@ -1,0 +1,78 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <script crossorigin src="https://unpkg.com/react@16/umd/react.development.js"></script> <!-- Core React Library -->
+<script crossorigin src="https://unpkg.com/react-dom@16/umd/react-dom.development.js"></script> <!-- React DOM Library for inject REACT into the DOM -->
+<script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
+
+</head>
+<body>
+<script type="text/babel">
+    class App extends React.Component {
+        state = {
+            name:'Foo Bar',
+            age :25,
+            msg: ''
+        }
+
+        handleClicks = (e) => {
+            console.log(e.target);
+        }
+        
+        handleMouseOver = (e) => {
+            console.log(e.pageX,e.pageY)
+                if (this.state.name == "Foo Bar"){
+                this.setState({name:"Bar Bar",age:45});
+            }else{
+                this.setState({name:"Foo Bar",age:20});
+            }
+        }
+        
+        handleCopy = (e) => {
+            this.setState({
+                msg:"Try Being Original for once"
+            })
+            console.log("Try Being Original for once");
+        }
+
+        handleOnChange = (e) => {
+            this.setState({
+                name:e.target.value
+            })
+        }
+        
+        handleSubmit = (e) => {
+            e.preventDefault();
+            console.log("Name Submitted",this.state.name)
+        }
+
+
+        render(){
+            return (
+            <div className = "app-content">
+                <h1>Startup</h1>
+                <h1>{this.state.msg}</h1>
+                <h2>My Name is {this.state.name}, and my age is {this.state.age}</h2>
+                <button onClick={this.handleClicks} >Click Me</button>
+                <button onMouseOver={this.handleMouseOver} >Hover over me</button>
+                <p onCopy={this.handleCopy}>What we think, we become!</p>
+
+                <form onSubmit = {this.handleSubmit}>
+                <input type="text" onChange={this.handleOnChange} />
+                <button >S</button>
+                </form>
+            </div>
+            )
+        }
+    }
+    ReactDOM.render(<App />,document.getElementById('app'));
+</script>
+    <div id= "app">
+
+    </div>
+    
+</body>
+</html>
