@@ -1,4 +1,9 @@
-# react-works
+# React Works
+
+#### Startup
+
+    yarn start
+    yarn build (For production build)
 
 Properties:
 
@@ -8,8 +13,11 @@ Properties:
 
 Requirements:
     VS Code Extensions:
+
         1> Sublime Babel
+
         2> ES7 React/Redux/GraphQL
+        
         3> Live Server(To Render the work)
 
     Chrome Extension:
@@ -17,7 +25,10 @@ Requirements:
 JSX is not supported in Browser. It needs to be transpiled using Babel for the Browser to understand.
 
 Components:
-State: Keeping the UI and data in state in sync with each other. User interacts with 
+
+
+State:
+Keeping the UI and data in state in sync with each other. User interacts with 
 # V1 - Getting started with React on single html page.
 
 # Main - Creating  React App using  'Create React App' boilerplate
@@ -31,7 +42,7 @@ State: Keeping the UI and data in state in sync with each other. User interacts 
         > Using Build tools to create optimized code
 
 #### Types of Components
-Container vs UI Components
+Container Components vs UI Components
 
     Container Components with State using Classes
     - Contain State
@@ -44,3 +55,16 @@ Container vs UI Components
     - Receive data from props
     - Only concerned with UI
     - Use function to create 
+
+
+#### Learning
+    1> spread -> ...    
+     To create copy of array
+    2> Destructuring : extracting values 
+        let { vals } = props.vals
+
+
+    Lifecycle Hooks:
+    1> componentDidMount
+    2> componentDidUpdate
+    3> componentDidUnmount
