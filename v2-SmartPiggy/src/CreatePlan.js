@@ -15,7 +15,6 @@ export default class CreatePlan extends Component {
 
     handleSubmit = (e) => {
         e.preventDefault();
-        // console.log(this.state);
         this.props.addPlan(this.state)
     }
 

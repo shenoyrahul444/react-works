@@ -1,5 +1,12 @@
 # React Works
 
+#### Requirements
+    NodeJS version
+
+#### App Creation
+    npx create-react-app <app_name>
+    cd <app_name>
+
 #### Startup
 
     yarn start

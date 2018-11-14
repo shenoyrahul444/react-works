@@ -54,7 +54,7 @@ class App extends Component {
         <Plans plans={this.state.plans_data} removePlan = {this.removePlan} />
         <p> This is the paragraph</p>
         
-        <CreatePlan addPlan= {this.addPlan} removePlan= {this.removePlan} />
+        <CreatePlan addPlan= {this.addPlan} />
       </div>
     );
   }
