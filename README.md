@@ -89,20 +89,20 @@ Container Components vs UI Components
     import {BrowserRouter,Route} from 'react-router-dom';
     <BrowserRouter></BrowserRouter>
 
-    Navigation:
+#### Navigation:
 
     import { Link,NavLink} from 'react-router-dom';
     <li><NavLink to="/contact">Contact</NavLink></li>
     // Use NavLink as a replacement for anchor tags. NavLinks have the 'active' property which can be useful for UI
     // Links enable react apps to take control and not call the server, but instead load the components locally
 
-    Programmatic Redirect :
+#### Programmatic Redirect :
     (Using settimeout() on 'props.history.push("/contact")')
     Every component redirected using Link receives the 'props' object.
     Other need to use the HigherOrder COmponents
 
 
-    1. Higher Order Components - Enhancing the functionality of a component
+#### Higher Order Components - Enhancing the functionality of a component
         # Reference => v4/src/hoc
 
         import {withRouter} from 'react-router-dom';
@@ -110,8 +110,8 @@ Container Components vs UI Components
         export default withRouter(Navbar);
         => withRouter is a higher order component that supercharges a component and allows using props with it for more functionalities.
 
-    2. Fetching and Displaying Data from a third party API:
-    
+#### Fetching and Displaying Data from a third party API:
+
         We can use Axios(HTTP Request Library) to do this job. It uses promises and fetches the JSON data, which can the be used to change the state and then render appropriately
 
     
