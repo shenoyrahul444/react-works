@@ -50,6 +50,8 @@ Keeping the UI and data in state in sync with each other. User interacts with
 
 #### Types of Components
 Container Components vs UI Components
+    * UI Components can be thought of just the internals of render method. No access to state. ONLY UI related work can be done here. Before its return (), we can also write Javascript as it is essentially a method.
+
 
     Container Components with State using Classes
     - Contain State
@@ -64,7 +66,9 @@ Container Components vs UI Components
     - Use function to create 
 
 
-#### Learning
+# Learning
+
+
     1> spread -> ...    
      To create copy of array
     2> Destructuring : extracting values 
@@ -72,9 +76,42 @@ Container Components vs UI Components
 
 
     Lifecycle Hooks:
-    1> componentDidMount
+    1> componentDidMount - Good Place to get external data from APIs. 
     2> componentDidUpdate
     3> componentDidUnmount
 
+#### Routing
     React Router:
     It stops the request from going to the sever by inject the components as requested
+
+    > npm install react-router-dom
+    
+    import {BrowserRouter,Route} from 'react-router-dom';
+    <BrowserRouter></BrowserRouter>
+
+    Navigation:
+
+    import { Link,NavLink} from 'react-router-dom';
+    <li><NavLink to="/contact">Contact</NavLink></li>
+    // Use NavLink as a replacement for anchor tags. NavLinks have the 'active' property which can be useful for UI
+    // Links enable react apps to take control and not call the server, but instead load the components locally
+
+    Programmatic Redirect :
+    (Using settimeout() on 'props.history.push("/contact")')
+    Every component redirected using Link receives the 'props' object.
+    Other need to use the HigherOrder COmponents
+
+
+    1. Higher Order Components - Enhancing the functionality of a component
+        # Reference => v4/src/hoc
+
+        import {withRouter} from 'react-router-dom';
+        ........
+        export default withRouter(Navbar);
+        => withRouter is a higher order component that supercharges a component and allows using props with it for more functionalities.
+
+    2. Fetching and Displaying Data from a third party API:
+    
+        We can use Axios(HTTP Request Library) to do this job. It uses promises and fetches the JSON data, which can the be used to change the state and then render appropriately
+
+    
