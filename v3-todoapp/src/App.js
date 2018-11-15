@@ -11,7 +11,6 @@ class App extends Component {
 
   addTask = (task) => {
     task.id = Math.random();
-    console.log(task);
     let tasks = [...this.state.todos,task]
     this.setState({
       todos:tasks
@@ -27,7 +26,7 @@ class App extends Component {
   
   render() {
     return (
-      <div className="App">
+      <div className=" todo-app container">
         <h1 className="center blue-text">Todo List</h1>
         <Todos todos={this.state.todos} removeTask={this.removeTask} />
         <AddTask addTask={this.addTask}  />

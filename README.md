@@ -75,3 +75,6 @@ Container Components vs UI Components
     1> componentDidMount
     2> componentDidUpdate
     3> componentDidUnmount
+
+    React Router:
+    It stops the request from going to the sever by inject the components as requested

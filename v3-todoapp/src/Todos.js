@@ -12,7 +12,7 @@ const Todos = ({todos,removeTask}) => {
         <p className= "center">The todo list is empty</p>
     );
 
-    
+
     return (
         <div className="todos collection" >
             {todoList}

@@ -29,7 +29,7 @@ class App extends Component {
   removePlan = (plan) => {
     console.log("Removed Plan with ID: "+ plan.id );
     let plans_data  = this.state.plans_data.filter(plan_data => {
-      return plan_data.id !==  plan.id
+        return plan_data.id !==  plan.id
     })
     this.setState({
       total_usable_amount: this.state.total_usable_amount + plan.amount,
