@@ -2,8 +2,18 @@ import React ,{Component} from 'react';
 
 export default class Test extends Component{
 state = {
-    button1 : null
-    
+    button1 : null,
+    test_id : null
+       
+}
+
+componentDidMount(){
+    console.log(this.props);
+    let id = this.props.match.params.test_id;
+    this.setState({
+        test_id:id
+    })
+
 }
 handleClick = (e) => {
     let flag = this.state.button1 ? false : true
@@ -27,12 +37,12 @@ render(){
        
         <div>
             <div>
-                <h4>Menu</h4>
-                <button id="button1" onClick={this.handleClick}>Button 1</button>
+                <h4>{this.state.test_id}</h4>
+                {/* <button id="button1" onClick={this.handleClick}>Button 1</button>
             </div>
             <div>
                 <h1>Display</h1>
-                { displayElement }
+                { displayElement } */}
             </div>
             
         </div>

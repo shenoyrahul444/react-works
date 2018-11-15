@@ -1,7 +1,11 @@
 # React Works
+#### Problems*** 
+    If things don't work as expected, CHECK FOR SPELLING MISTAKES, FIRST
+
 
 #### Requirements
     NodeJS version
+
 
 #### App Creation
     npx create-react-app <app_name>
@@ -49,10 +53,10 @@ Keeping the UI and data in state in sync with each other. User interacts with
         > Using Build tools to create optimized code
 
 #### Types of Components
-Container Components vs UI Components
+Container Components(class) vs UI Components(function)
     * UI Components can be thought of just the internals of render method. No access to state. ONLY UI related work can be done here. Before its return (), we can also write Javascript as it is essentially a method.
 
-
+    * Container Components dirctly get 'props' 
     Container Components with State using Classes
     - Contain State
     - Contain Lifecycle hooks
@@ -80,14 +84,28 @@ Container Components vs UI Components
     2> componentDidUpdate
     3> componentDidUnmount
 
-#### Routing
+#### Routing 'react-router-dom'
     React Router:
     It stops the request from going to the sever by inject the components as requested
 
     > npm install react-router-dom
     
-    import {BrowserRouter,Route} from 'react-router-dom';
-    <BrowserRouter></BrowserRouter>
+    import {BrowserRouter,Route,Switch} from 'react-router-dom';
+    <BrowserRouter>
+        <Switch>
+             <Route path="/home" component={Home} /> 
+        </Switch>
+    </BrowserRouter>
+
+    # This 'Switch' Tag -> Gives precedence to the match in the URL starting from the top, withing the Routes in the <Switch></Switch> tag.
+    # Example: 
+        url: "/123"
+        <Switch>
+            <Route path="/contact">
+            <Route path="/:post_id">        # <------ Only matches it with this Route
+        </Switch>
+
+
 
 #### Navigation:
 
@@ -113,5 +131,12 @@ Container Components vs UI Components
 #### Fetching and Displaying Data from a third party API:
 
         We can use Axios(HTTP Request Library) to do this job. It uses promises and fetches the JSON data, which can the be used to change the state and then render appropriately
+
+#### Setting Route-Parameters for API
+        <Route path="/:post_id" component={Blog}>  
+
+#### Images
+    import images from the location inside "src" folder
+    <img src="../<imagename.extension>" alt="description" />
 
     
