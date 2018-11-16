@@ -3,6 +3,8 @@
     If things don't work as expected, CHECK FOR SPELLING MISTAKES, FIRST
 
 
+
+
 #### Requirements
     NodeJS version
 
@@ -148,6 +150,8 @@ Container Components(class) vs UI Components(function)
 ![Redux Structure](v4/ReadMe_images/Redux.png)
     
 #### Elements of Redux
+
+The main idea of redux is to have a central store of data that each component can reach out to and grab
     
     1> Reducer 
         (Uses Dispatch Actions to update the warehouse/central_component/state)
@@ -159,4 +163,81 @@ Container Components(class) vs UI Components(function)
     4> Dispatch Action
 
 #### Setting up Redux in the project
+    1> Install 2 Packages:
+        > npm install redux react-redux 
+        OR 
+        > npm install redux 
+        > npm install react-redux 
+    
+    2> In index.js 
+        import { createStore } from 'redux';
+        const store = createStore();
+
+    3> TO interact with the store we need a Component called Provider from 'react-redux'
+
+        -- import { Provider } from 'react-redux';
+
+        *Allows store to interact with the react app
+        Wraps  the <App /> component
+
+        -- <Provider store={ store }><App /> </Provider>
+
+    4> Create a reducer for the store. Make a folder reducer. We need more than one reducers.
+
+    We create multiple reducers , which are that used by the 'root' reducer that is placed in the createStore() 
+
+
+
+
+    4> Connecting Components with the Store
+
+    We use HOC using a function called { connect } from 'react-redux' that creates a HOC and allows components to interact with redux and the store
+    
+    -- import {connect} from 'react-redux'
+
+    We map the data from store to component using Props of the component
+    // We tell the store what we want in the props of the component in mapStateToProps
+    -- const mapStateToProps = (state) => {
+        return {
+            posts : state.posts
+        }
+    }
+
+    // Then we use it in the connect()
+
+    -- export default connect(mapStateToProps)(Home);
+
+
+    5> Performing ACTIONS from the Component to the central store
+    handleClick = () => {
+        // We get the deletePost in 'this.Props'  because we added it to connect the Component to reducer in the export Component line below 
+        this.props.deletePost(this.props.post.id);
+    }
+    -- create mapDispatchToProps = (dispatch) => {
+        return {
+            deletePost : (id) => { dispatch({ type:'DELETE_POST, id:id }) }
+        }
+    }
+
+    // Then add this to connectMethod to the Wrapper around Component. These ,methods are available in the 'Props'
+    -- export default connect(mapStateToProps,mapDispatchToProps)(Home);
+
+
+
+    6> To Consolidate the actions so they can be used form anywhere, We use an action forder in "src" to store
+    - src
+       - actions
+            - postActions.js
+
+            // Inside postActions.js
+            --- export const deletePost = (id ) => {
+                return
+                   { 
+                       type:'DELETE_POST',
+                       id:id
+                    }
+                }
+    // Inside Component that makes use of this Action
+    -- import  {}
+                
 
