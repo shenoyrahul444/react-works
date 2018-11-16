@@ -1,15 +1,23 @@
 import React, {Component} from 'react';
+import axios from 'axios';
 import { Link } from 'react-router-dom';
-import { connect } from 'react-redux';
 
-class Home extends Component {
-    
+export default class Home extends Component {
+    state = {
+        posts : []
+    }
+
+    componentDidMount(){
+        axios.get('https://jsonplaceholder.typicode.com/posts')
+        .then(response => {
+           this.setState({
+               posts : response.data.slice(0,10)
+           })
+        })
+    }
 
     render(){
-
-        console.log(this.props);
-
-        const {posts}=this.props;
+        const {posts}=this.state;
         const postsList = posts.length ? 
         ( posts.map(post => {
             return (
@@ -28,17 +36,11 @@ class Home extends Component {
         (<div className="center">No Posts Yet</div>)
         return (
             <div className="container">
-                <h1 className="center">Home</h1>   
-                {postsList}
+            <h1 className="center">Home</h1>   
+            {postsList}
+
+
             </div>
         )
     }
 }
-
-const mapStateToProps = (state) => {
-    return {
-        posts: state.posts
-    }
-}
-
-export default connect(mapStateToProps)(Home);

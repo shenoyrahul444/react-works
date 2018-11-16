@@ -139,4 +139,24 @@ Container Components(class) vs UI Components(function)
     import images from the location inside "src" folder
     <img src="../<imagename.extension>" alt="description" />
 
+
+#  Redux
+    - Central data store for all app data shared by the components
+    - Any component can access data from it
+    - makes state management easy
+
+![Redux Structure](v4/ReadMe_images/Redux.png)
     
+#### Elements of Redux
+    
+    1> Reducer 
+        (Uses Dispatch Actions to update the warehouse/central_component/state)
+    
+    2> Central Data Store (Javascript object that acts as a warehouse)
+
+    3> Component - that subscribes to the changes in the store
+
+    4> Dispatch Action
+
+#### Setting up Redux in the project
+

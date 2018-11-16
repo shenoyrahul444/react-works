@@ -24,12 +24,12 @@ handleClick = (e) => {
 
 render(){
 
-    let displayElement;
-    if(this.state.button1){
-        displayElement = <h1 >YesButton</h1>
-    }else{
-        displayElement = <h1>NoButton</h1>
-    }
+    // let displayElement;
+    // if(this.state.button1){
+    //     displayElement = <h1 >YesButton</h1>
+    // }else{
+    //     displayElement = <h1>NoButton</h1>
+    // }
 
 
     
