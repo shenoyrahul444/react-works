@@ -1,5 +1,8 @@
-# React Works
-#### Problems*** 
+# *React Works* - Getting Started
+
+
+
+#### ***Problems*** 
     If things don't work as expected, CHECK FOR SPELLING MISTAKES, FIRST
 
 
@@ -25,14 +28,14 @@ Properties:
     - React changes the content on the page dynamically.
 
 Requirements:
-    VS Code Extensions:
+​    VS Code Extensions:
 
         1> Sublime Babel
-
+    
         2> ES7 React/Redux/GraphQL
         
         3> Live Server(To Render the work)
-
+    
     Chrome Extension:
         1> React Developer Tools
 JSX is not supported in Browser. It needs to be transpiled using Babel for the Browser to understand.
@@ -56,7 +59,7 @@ Keeping the UI and data in state in sync with each other. User interacts with
 
 #### Types of Components
 Container Components(class) vs UI Components(function)
-    * UI Components can be thought of just the internals of render method. No access to state. ONLY UI related work can be done here. Before its return (), we can also write Javascript as it is essentially a method.
+​    * UI Components can be thought of just the internals of render method. No access to state. ONLY UI related work can be done here. Before its return (), we can also write Javascript as it is essentially a method.
 
     * Container Components dirctly get 'props' 
     Container Components with State using Classes
@@ -64,7 +67,7 @@ Container Components(class) vs UI Components(function)
     - Contain Lifecycle hooks
     - Not concerned with UI
     - Use classes to create
-
+    
     UI Components without State using Functions(When we dont need the state and primarily purpose is UI )
     - Dont contain state
     - Receive data from props
@@ -89,7 +92,7 @@ Container Components(class) vs UI Components(function)
 #### Routing 'react-router-dom'
     React Router:
     It stops the request from going to the sever by inject the components as requested
-
+    
     > npm install react-router-dom
     
     import {BrowserRouter,Route,Switch} from 'react-router-dom';
@@ -98,7 +101,7 @@ Container Components(class) vs UI Components(function)
              <Route path="/home" component={Home} /> 
         </Switch>
     </BrowserRouter>
-
+    
     # This 'Switch' Tag -> Gives precedence to the match in the URL starting from the top, withing the Routes in the <Switch></Switch> tag.
     # Example: 
         url: "/123"
@@ -124,7 +127,7 @@ Container Components(class) vs UI Components(function)
 
 #### Higher Order Components - Enhancing the functionality of a component
         # Reference => v4/src/hoc
-
+    
         import {withRouter} from 'react-router-dom';
         ........
         export default withRouter(Navbar);
@@ -148,18 +151,18 @@ Container Components(class) vs UI Components(function)
     - makes state management easy
 
 ![Redux Structure](v4/ReadMe_images/Redux.png)
-    
+​    
 #### Elements of Redux
 
 The main idea of redux is to have a central store of data that each component can reach out to and grab
-    
-    1> Reducer 
-        (Uses Dispatch Actions to update the warehouse/central_component/state)
-    
-    2> Central Data Store (Javascript object that acts as a warehouse)
-
+​    
+​    1> Reducer 
+​        (Uses Dispatch Actions to update the warehouse/central_component/state)
+​    
+​    2> Central Data Store (Javascript object that acts as a warehouse)
+​    
     3> Component - that subscribes to the changes in the store
-
+    
     4> Dispatch Action
 
 #### Setting up Redux in the project
@@ -172,29 +175,29 @@ The main idea of redux is to have a central store of data that each component ca
     2> In index.js 
         import { createStore } from 'redux';
         const store = createStore();
-
+    
     3> TO interact with the store we need a Component called Provider from 'react-redux'
-
+    
         -- import { Provider } from 'react-redux';
-
+    
         *Allows store to interact with the react app
         Wraps  the <App /> component
-
+    
         -- <Provider store={ store }><App /> </Provider>
-
+    
     4> Create a reducer for the store. Make a folder reducer. We need more than one reducers.
-
+    
     We create multiple reducers , which are that used by the 'root' reducer that is placed in the createStore() 
 
 
 
 
     4> Connecting Components with the Store
-
+    
     We use HOC using a function called { connect } from 'react-redux' that creates a HOC and allows components to interact with redux and the store
     
     -- import {connect} from 'react-redux'
-
+    
     We map the data from store to component using Props of the component
     // We tell the store what we want in the props of the component in mapStateToProps
     -- const mapStateToProps = (state) => {
@@ -202,9 +205,9 @@ The main idea of redux is to have a central store of data that each component ca
             posts : state.posts
         }
     }
-
+    
     // Then we use it in the connect()
-
+    
     -- export default connect(mapStateToProps)(Home);
 
 
@@ -218,7 +221,7 @@ The main idea of redux is to have a central store of data that each component ca
             deletePost : (id) => { dispatch({ type:'DELETE_POST, id:id }) }
         }
     }
-
+    
     // Then add this to connectMethod to the Wrapper around Component. These ,methods are available in the 'Props'
     -- export default connect(mapStateToProps,mapDispatchToProps)(Home);
 
@@ -228,7 +231,7 @@ The main idea of redux is to have a central store of data that each component ca
     - src
        - actions
             - postActions.js
-
+    
             // Inside postActions.js
             --- export const deletePost = (id ) => {
                 return
@@ -239,5 +242,5 @@ The main idea of redux is to have a central store of data that each component ca
                 }
     // Inside Component that makes use of this Action
     -- import  {}
-                
+
 
