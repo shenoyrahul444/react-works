@@ -5,7 +5,7 @@ import Home from './ui/Home';
 import About from './ui/About';
 import Contact from './ui/Contact';
 import Footer from './ui/Footer';
-import './assets/css/base.css';
+// import './assets/css/base.css';
 
 
 const Portfolio = () => {

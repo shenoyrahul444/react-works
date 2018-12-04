@@ -1,12 +1,12 @@
 import React from 'react';
-import background from "../assets/images/hero-bg.jpg";
+// import background from "../assets/images/hero-bg.jpg";
 
 const Home = () => {
     return (
        
 
 
-   <section id="home" className="s-home page-hero target-section"  data-parallax="scroll" data-image-src={background} data-natural-width={2700} data-natural-height={2000} data-position-y="center">
+   <section id="home" className="s-home page-hero target-section"  data-parallax="scroll" data-image-src="/assets/images/hero-bg.jpg" data-natural-width={2700} data-natural-height={2000} data-position-y="center">
        
             <div className="overlay"></div>
             <div className="shadow-overlay"></div>

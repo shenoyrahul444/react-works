@@ -15,14 +15,14 @@ class App extends Component {
       <BrowserRouter>
           <div className="App">
 
-              {/* <Navbar />
+              <Navbar />
               <Switch>
                   <Route exact path ="/" component= { Home }  />
                   <Route path ='/about' component= { About }  /> 
                   <Route path ='/contact' component= { Contact }  />
                   <Route path ='/test/:test_id' component= { Test }  />
                   <Route path= "/:post_id" component = { Post } />
-              </Switch> */}
+              </Switch>
           </div>
       </BrowserRouter>
     );

@@ -1,12 +1,12 @@
 import React from 'react';
-import logo from '../assets/images/logo.png';
+// import logo from '../assets/images/logo.png';
 
 
 const Header = () => {
     return (
             <header className="s-header">
                     <div className="header-logo">
-                        <a className="site-logo" href="index.html"><img src={logo} alt="Homepage" /></a>
+                        <a className="site-logo" href="index.html"><img src="/assets/images/logo.png" alt="Homepage" /></a>
                     </div>
 
                     <nav className="header-nav-wrap">
